@@ -1,1 +1,38 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-neuraln",     "homepage": "https://github.com/npmdoc/node-npmdoc-neuraln",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-neuraln.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [neuraln (v0.2.1)](https://github.com/teleportd/neuraln)  [![npm package](https://img.shields.io/npm/v/npmdoc-neuraln.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-neuraln) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-neuraln.svg)](https://travis-ci.org/npmdoc/node-npmdoc-neuraln)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-neuraln",
+    "keywords": [
+        "documentation",
+        "neuraln"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_neuraln.js",
+    "name": "npmdoc-neuraln",
+    "nameAlias": "npmdoc_neuraln",
+    "nameOriginal": "npmdoc-neuraln",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-neuraln.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
